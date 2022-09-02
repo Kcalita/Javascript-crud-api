@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crudapi</title>
+<!--<link rel="stylesheet" href="style.css">-->
+    <script src="script.js"></script>
+</head>
+<body onload="loadinfo()">
+    <h1>CRUD api</h1>
+<!--<button type="button" onclick="loadinfo()">show details</button>-->
+<div>
+    <button id="btn1" type="button" onclick="enterdetail()" style="float: right;">add details</button>
+</div>  
+<div class="table">
+    <table id="userTable" border="1">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">name</th>
+                <th scope="col">email</th>
+                <th scope="col">gender</th>
+                <th scope="col">status</th>
+            </tr>
+        </thead>
+        <tbody id="tablebody">
+        </tbody>
+    </table>
+</div>
+      
+<div class="form">
+<form id="data" onsubmit="event.preventDefault();validate();" style="display:none" autocomplete="off">
+        <fieldset>
+        <div>
+            <label for="name1">Name: </label> 
+            <input id="name1" class="name" name="name" type="text" placeholder="Enter your full name here"><div class="error" id="nameErr"></div>
+            <input id="id" type="hidden">
+        </div>
+        <div>
+            <label for="email1">Email: </label> 
+            <input id="email1" class="email" name="email" type="text" placeholder="Enter your email here"><div class="error" id="emailErr"></div>
+        </div>
+        <div>
+            <label for="gender1" class="gender1">Gender: </label>
+            <select id="gender1">
+                <option value="">Select gender</option>
+                <option value="male">male</option>
+                <option value="female">female</option>
+            </select>
+            <div class="error" id="genderErr"></div>    
+        </div>
+        <div>
+            <label for="status1" class="status1">status: </label>
+            <select id="status1">
+              <option value="">Select status</option>
+              <option value="active">active</option>
+              <option value="inactive">inactive</option>
+             </select>
+             <div class="error" id="statusErr"></div>
+        </div>
+        <input type="submit" id="sub" value="submit">
+       <!-- <button type="button" id="edi" style="display:none" onclick="validatee()">EDIT</button>-->
+        <input type="reset" value="Reset">
+    </fieldset>        
+</form>
+</div>
+<div>
+    <p id="servererr"></p>
+</div>          
+
+</body>
+</html>
